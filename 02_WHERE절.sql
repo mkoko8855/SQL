@@ -90,6 +90,10 @@ SELECT *
   /*'%15'라면, 앞에가 뭐가들어가든간에 뒤가 15면 전부 조회해라 라는 뜻이 된다.*/
   /*'%05%라면, 05가 들어가기만하면 뭐든지 조회해라 라는 뜻이 된다.*/
 
+
+
+
+
 /*언더바*/
 /*월이 05인(5월달인) 애만 찾고싶다면?*/
 /*WHERE hire_date LIKE '___05%' 이다.*/
@@ -186,6 +190,11 @@ ORDER BY employee_id DESC;
 SELECT first_name, salary*12 AS pay
 FROM employees
 ORDER BY pay ASC;
+
+
+
+
+
 
 
 

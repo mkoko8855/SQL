@@ -47,7 +47,7 @@ SELECT first_name AS 이름, last_name AS 성, salary AS 급여
 문장을 연결하고 싶다면 ||를 사용한다.
 */
 SELECT first_name || ' ' || last_name || '''s salary is $' || salary 
-       AS 급여내역
+    AS 급여내역
   FROM employees;
 
 
