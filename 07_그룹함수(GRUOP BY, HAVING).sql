@@ -14,7 +14,7 @@ FROM employees;
 
 
 
-SELECT COUNT(*)
+SELECT COUNT(*) /*나중에 페이징 할때도 씀 총 게시물의 개수를 얻어서 집어넣어야되니까.*/
 FROM employees;
 /* 총 행 데이터 수가 107개인 것을 알 수 있다. */
 SELECT COUNT(first_name)
@@ -78,4 +78,59 @@ WHERE department_id >= 50
 GROUP BY department_id
 HAVING AVG(salary) >= 5000
 ORDER BY department_id DESC;
+
+
+
+
+
+/*
+문제 1.
+사원 테이블에서 JOB_ID별 사원 수를 구하세요.
+사원 테이블에서 JOB_ID별 월급의 평균을 구하세요. 월급의 평균 순으로 내림차순 정렬하세요
+*/
+SELECT job_id, COUNT(*) AS 사원수
+FROM employees
+GROUP BY job_id
+ORDER BY 사원수 DESC;
+
+
+/*
+문제 2.
+사원 테이블에서 입사 년도 별 사원 수를 구하세요.
+*/
+select to_char(hire_date,'yy'), count(*) 
+from employees 
+group by to_char(hire_date,'yy');
+
+
+
+
+
+/*
+문제 3.
+급여가 5000 이상인 사원들의 부서별 평균 급여를 출력하세요. 
+단 부서 평균 급여가 7000이상인 부서만 출력
+*/
+SELECT department_id, AVG(salary) AS 평균
+FROM employees
+WHERE salary >= 5000
+GROUP BY department_id
+HAVING AVG(salary) > 7000;
+
+
+/*
+문제 4.
+사원 테이블에서 commission_pct(커미션) 컬럼이 null이 아닌 사람들의
+department_id(부서별) salary(월급)의 평균, 합계, count를 구합니다.
+조건 1) 월급의 평균은 커미션을 적용시킨 월급입니다.
+조건 2) 평균은 소수 2째 자리에서 절삭 하세요
+*/
+SELECT department_id, TRUNC(AVG(salary + (salary * commission_pct)), 2), SUM(salary + salary * commission_pct), count(*)
+FROM employees
+WHERE commission_pct is not null
+GROUP BY department_id;
+
+
+
+
 
