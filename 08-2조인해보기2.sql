@@ -143,3 +143,12 @@ SELECT e1.employee_id, e1.first_name, e1.manager_id, e2.first_name, e2.employee_
 FROM employees e1
 JOIN employees e2
 ON e1.manager_id = e2.employee_id;
+
+
+
+
+
+
+
+
+

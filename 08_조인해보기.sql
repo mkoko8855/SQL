@@ -27,8 +27,9 @@ FROM employees e, departments d /*e와 d는 별칭이다. FROM절 테이블은 AS를 생략할 
 두 테이블이 공통으로 가지고 있는 컬럼을 써줘야 한다. WHERE 절로 가자
 */
 WHERE e.department_id = d.department_id;
-/* SELECT절의 department_id는 두 테이블에 다 있기 때문에 에러가 난다.
-   누구꺼의 department_id를 꺼낼지 얘기를 해줘야 하니까 e또는 d.department_id라고 해주자.
+/* 
+SELECT절의 department_id는 두 테이블에 다 있기 때문에 에러가 난다.
+누구꺼의 department_id를 꺼낼지 얘기를 해줘야 하니까 e또는 d.department_id라고 해주자.
 */
 
 
@@ -74,6 +75,8 @@ FROM employees e, departments d, jobs j
 /*WHERE절은 일단 e와 d를 합쳐서 같은 것을 찾고, 그 합친 결과에 j를 합친 결과를 찾자*/
 WHERE e.department_id = d.department_id
 AND e.job_id = j.job_id;
+
+
 
 
 
