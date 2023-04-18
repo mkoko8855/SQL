@@ -50,3 +50,4 @@ ADD(auth_id NUMBER);
 UPDATE info
 SET auth_id = 3
 WHERE id = 5;
+
