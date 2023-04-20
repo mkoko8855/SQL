@@ -7,7 +7,6 @@ SET AUTOCOMMIT ON;   /*오토커밋 온*/
 SET AUTOCOMMIT OFF;  /*오토커밋 오프*/
 
 
-
 INSERT INTO emps
     (employee_id, last_name, email, hire_date, job_id)
 VALUES
